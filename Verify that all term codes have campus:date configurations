@@ -1,0 +1,6 @@
+-- This is the query for: Verify that all term codes have campus/date configurations
+
+SELECT ct.code 
+FROM codeTerm ct
+LEFT JOIN configTerm cfg ON ct.code = cfg.term
+WHERE cfg.term IS NULL;
